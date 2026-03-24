@@ -42,10 +42,14 @@ public class Application {
 
 //        eventiDAO.save(e1);
 //        eventiDAO.save(e2);
-        eventiDAO.save(e3);
-        eventiDAO.save(e4);
+//        eventiDAO.save(e3);
+//        eventiDAO.save(e4);
 
         // sarebbe poi da chiudere l entity maganer perche a quanto pare creandolo qui gia' e' aperto e non va bene tenerlo aperto spreca risorse ma tanto questa non e' app vera e a noi al momento non importa
         // casomai poi comunque per riaprilo sarebbe da crearne uno nuovo come se quello vecchio fosse buttato via
+
+
+        System.out.println(eventiDAO.findById(1));
+        System.out.println(eventiDAO.findById(5));
     }
 }

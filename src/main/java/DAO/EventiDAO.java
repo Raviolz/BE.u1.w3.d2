@@ -1,6 +1,7 @@
 package DAO;
 
 import GestioneEventi.Entities.Evento;
+import exceptions.NotFoundException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 
@@ -38,4 +39,14 @@ public class EventiDAO {
         // 5. Log di avvenuto salvataggio
         System.out.println("L evento " + newEvento.getTitolo() + " è stato salvato con successo!");
     }
+
+
+// qua non apro nessuna transazione perche devo solo leggere non far eperazioni
+
+    public Evento findById(long eventoId) {
+        Evento found = entityManager.find(Evento.class, eventoId);
+        if (found == null) throw new NotFoundException(eventoId);
+        return found;
+    }
 }
+
